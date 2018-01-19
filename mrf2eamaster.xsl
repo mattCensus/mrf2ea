@@ -102,7 +102,7 @@
                 <!-- inserts the xsi namespace -->
                 <xsl:copy-of select="document('')/*/namespace::*[name()='xsi']"/>
                 
-                <xsl:attribute name="xsi:schemaLocation">https://www.ngdc.noaa.gov/metadata/published/xsd/schema/gfc/featureCataloging.xsd</xsl:attribute>
+                <xsl:attribute name="xsi:schemaLocation">https://www.ngdc.noaa.gov/metadata/published/xsd/schema/gfc/featureCataloging.xsd http://www.isotc211.org/2005/gfc</xsl:attribute>
                 
                 <xsl:call-template name="gmxName"/>
                 <xsl:call-template name="gmxscope"/>

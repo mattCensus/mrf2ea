@@ -11,6 +11,7 @@
                                                template. Also created a template for the defalut Contact Information if the branch in the MIF file has not had a 
                                                 UUID made for it.
      MMC       4/5/17                         Commented out a comment 
+     MMC       1/18/17                        Updated to include the Spatial Data Collection and Products Branch 
 -->
 
 
@@ -106,6 +107,9 @@ exclude-result-prefixes="fn grp vmf xs xsi xsl xd" xmlns="http://www.isotc211.or
           </xsl:when>
           <xsl:when test="contains($FullContact,'Geographic Products Branch')">
             <xsl:call-template name="GeographicProductsBranchPointOfContact"/>
+          </xsl:when>
+          <xsl:when test="contains($FullContact,'Spatial Data Collection and Products Branch')">
+            
           </xsl:when>
           <xsl:otherwise>
             <xsl:call-template name="defaultContact"/>
@@ -218,6 +222,14 @@ exclude-result-prefixes="fn grp vmf xs xsi xsl xd" xmlns="http://www.isotc211.or
       <xsl:attribute name="xlink:href"
         >https://www.ngdc.noaa.gov/docucomp/09b8253a-e2dc-4a6b-a905-11f1e0e87b3b</xsl:attribute>
       <xsl:attribute name="xlink:title">pointOfContact - U.S. Department of Commerce, U.S. Census Bureau, Geography Division</xsl:attribute>
+    </xsl:element>
+  </xsl:template>
+  
+  <!-- SpatialDataCollectionandProductsBranch -->
+  <xsl:template name="SpatialDataCollectionandProductsBranchCust">
+    <xsl:element name="gfc:producer">
+      <xsl:attribute name="xlink:href">https://www.ngdc.noaa.gov/docucomp/B04DFA5D-40CD-B677-E040-0AC8C5BB4473</xsl:attribute>
+      <xsl:attribute name="xlink:title"> U.S. Department of Commerce, U.S. Census Bureau, Geography Division, Spatial Data Collection and Products Branchh (custodian)</xsl:attribute>
     </xsl:element>
   </xsl:template>
   
